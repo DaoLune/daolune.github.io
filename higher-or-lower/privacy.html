@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Higher or Lower – Privacy policy</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main>
+  <nav class="langs" id="langs"></nav>
+  <article id="doc"></article>
+  <p class="foot"><a href="index.html" id="back"></a></p>
+</main>
+<script src="config.js"></script>
+<script>
+// Privacy policy of the game "Higher or Lower". Last update: 19 November 2026.
+const DATE = { en:"19 November 2026", fr:"19 novembre 2026", es:"19 de noviembre de 2026", pt:"19 de novembro de 2026", zh:"2026年11月19日", ru:"19 ноября 2026 г.", th:"19 พฤศจิกายน 2569" };
+const T = {
+en:{ back:"← Support", title:"Privacy policy", updated:"Last updated:", s:[
+ ["In short","Higher or Lower does not need an account and we (the developer) do not collect, store or sell any personal data. Your scores and settings stay on your phone. The only data that leaves your phone is used by Google to show ads, and by Apple or Google when you buy “Remove ads”."],
+ ["Who we are","Higher or Lower is made by DaoLune, the independent game studio of Kevin Bosio, based in France. Contact: {email}"],
+ ["Data kept on your phone","Your scores, statistics, badges, settings, the categories you create and the Daily Challenge results are saved only on your device. We never receive them. You can erase them in Settings → Reset progress, or by deleting the app."],
+ ["Advertising (Google AdMob)","The free version shows ads from Google AdMob. To show ads, measure them and prevent fraud, Google may collect: your device's advertising identifier (on iPhone only if you allow tracking), your IP address and approximate location, information about your device, and how you interact with the ads. In the European Economic Area, the UK and Switzerland, Google's consent form asks for your choice before personalised ads are shown; you can change it at any time in Settings → Privacy & ads. On iPhone, Apple asks whether the app may track you; if you refuse, ads are not personalised. More information: https://policies.google.com/technologies/partner-sites"],
+ ["Purchases","The “Remove ads” purchase is handled entirely by the App Store or Google Play. We never see your name or payment details; the app only receives a confirmation that the purchase was made."],
+ ["Notifications","The optional daily reminder is scheduled on your phone itself. No server is involved and you can turn it off in Settings."],
+ ["Sharing","When you tap “Share”, your phone's share menu opens and you choose where your score image or text goes. Nothing is shared automatically."],
+ ["Children","The game is meant for a general audience aged 13 and over. It is not designed for children under 13 and we do not knowingly collect data from them."],
+ ["Your rights","Because we hold no personal data about you, there is nothing for us to access, correct or delete. For data collected by Google for advertising, see Google's privacy policy above or use Settings → Privacy & ads. For any question, write to {email}."],
+ ["Changes","If this policy changes, the new version will be published on this page with a new date."]]},
+fr:{ back:"← Assistance", title:"Politique de confidentialité", updated:"Dernière mise à jour :", s:[
+ ["En bref","Higher or Lower ne demande aucun compte et nous (le développeur) ne collectons, ne conservons et ne vendons aucune donnée personnelle. Tes scores et réglages restent sur ton téléphone. Les seules données qui quittent ton téléphone sont utilisées par Google pour afficher des publicités, et par Apple ou Google si tu achètes « Supprimer les pubs »."],
+ ["Qui sommes-nous","Higher or Lower est créé par DaoLune, le studio de jeux indépendant de Kevin Bosio, basé en France. Contact : {email}"],
+ ["Données gardées sur ton téléphone","Tes scores, statistiques, badges, réglages, les catégories que tu crées et tes résultats du Défi du jour sont enregistrés uniquement sur ton appareil. Nous ne les recevons jamais. Tu peux les effacer dans Réglages → Effacer la progression, ou en supprimant l'application."],
+ ["Publicité (Google AdMob)","La version gratuite affiche des publicités de Google AdMob. Pour les afficher, les mesurer et lutter contre la fraude, Google peut collecter : l'identifiant publicitaire de ton appareil (sur iPhone seulement si tu autorises le suivi), ton adresse IP et ta position approximative, des informations sur ton appareil et tes interactions avec les publicités. Dans l'Espace économique européen, au Royaume-Uni et en Suisse, le formulaire de consentement de Google te demande ton choix avant toute publicité personnalisée ; tu peux le modifier à tout moment dans Réglages → Confidentialité et pubs. Sur iPhone, Apple te demande si l'app peut te suivre ; si tu refuses, les publicités ne sont pas personnalisées. Plus d'infos : https://policies.google.com/technologies/partner-sites"],
+ ["Achats","L'achat « Supprimer les pubs » est entièrement géré par l'App Store ou Google Play. Nous ne voyons jamais ton nom ni tes données de paiement ; l'app reçoit seulement la confirmation de l'achat."],
+ ["Notifications","Le rappel quotidien (facultatif) est programmé directement sur ton téléphone. Aucun serveur n'intervient et tu peux le désactiver dans les Réglages."],
+ ["Partage","Quand tu appuies sur « Partager », le menu de partage de ton téléphone s'ouvre et tu choisis où envoyer ton score. Rien n'est partagé automatiquement."],
+ ["Enfants","Le jeu s'adresse à un public général de 13 ans et plus. Il n'est pas conçu pour les enfants de moins de 13 ans et nous ne collectons sciemment aucune donnée les concernant."],
+ ["Tes droits (RGPD)","Comme nous ne détenons aucune donnée personnelle te concernant, il n'y a rien à consulter, corriger ou supprimer de notre côté. Pour les données collectées par Google pour la publicité, consulte la politique de Google ci-dessus ou utilise Réglages → Confidentialité et pubs. Pour toute question : {email}. Tu peux aussi contacter la CNIL (www.cnil.fr)."],
+ ["Modifications","Si cette politique change, la nouvelle version sera publiée sur cette page avec une nouvelle date."]]},
+es:{ back:"← Ayuda", title:"Política de privacidad", updated:"Última actualización:", s:[
+ ["En resumen","Higher or Lower no necesita cuenta y nosotros (el desarrollador) no recopilamos, guardamos ni vendemos datos personales. Tus puntuaciones y ajustes se quedan en tu teléfono. Los únicos datos que salen de tu teléfono los usa Google para mostrar anuncios, y Apple o Google cuando compras «Quitar anuncios»."],
+ ["Quiénes somos","Higher or Lower está creado por DaoLune, el estudio de juegos independiente de Kevin Bosio, con sede en Francia. Contacto: {email}"],
+ ["Datos guardados en tu teléfono","Tus puntuaciones, estadísticas, insignias, ajustes, las categorías que creas y los resultados del Reto diario se guardan solo en tu dispositivo. Nunca los recibimos. Puedes borrarlos en Ajustes → Borrar progreso o eliminando la app."],
+ ["Publicidad (Google AdMob)","La versión gratuita muestra anuncios de Google AdMob. Para mostrarlos, medirlos y evitar el fraude, Google puede recopilar: el identificador publicitario de tu dispositivo (en iPhone solo si permites el rastreo), tu dirección IP y ubicación aproximada, información sobre tu dispositivo y cómo interactúas con los anuncios. En el Espacio Económico Europeo, el Reino Unido y Suiza, el formulario de consentimiento de Google te pide tu elección antes de mostrar anuncios personalizados; puedes cambiarla cuando quieras en Ajustes → Privacidad y anuncios. En iPhone, Apple te pregunta si la app puede rastrearte; si lo rechazas, los anuncios no se personalizan. Más información: https://policies.google.com/technologies/partner-sites"],
+ ["Compras","La compra «Quitar anuncios» la gestiona por completo App Store o Google Play. Nunca vemos tu nombre ni tus datos de pago; la app solo recibe la confirmación de la compra."],
+ ["Notificaciones","El recordatorio diario (opcional) se programa en tu propio teléfono. No interviene ningún servidor y puedes desactivarlo en Ajustes."],
+ ["Compartir","Al tocar «Compartir» se abre el menú de tu teléfono y tú eliges dónde enviar tu puntuación. Nada se comparte automáticamente."],
+ ["Menores","El juego está pensado para un público general de 13 años o más. No está diseñado para menores de 13 años y no recopilamos conscientemente datos suyos."],
+ ["Tus derechos","Como no guardamos datos personales tuyos, no hay nada que consultar, corregir o borrar por nuestra parte. Para los datos que Google recopila para publicidad, consulta su política (enlace arriba) o usa Ajustes → Privacidad y anuncios. Para cualquier pregunta: {email}."],
+ ["Cambios","Si esta política cambia, la nueva versión se publicará en esta página con una nueva fecha."]]},
+pt:{ back:"← Suporte", title:"Política de privacidade", updated:"Última atualização:", s:[
+ ["Resumo","O Higher or Lower não precisa de conta e nós (o desenvolvedor) não coletamos, guardamos nem vendemos dados pessoais. Suas pontuações e configurações ficam no seu celular. Os únicos dados que saem do celular são usados pelo Google para mostrar anúncios, e pela Apple ou pelo Google quando você compra “Remover anúncios”."],
+ ["Quem somos","O Higher or Lower é feito pela DaoLune, o estúdio de jogos independente de Kevin Bosio, na França. Contato: {email}"],
+ ["Dados guardados no seu celular","Suas pontuações, estatísticas, conquistas, configurações, as categorias que você cria e os resultados do Desafio diário ficam salvos apenas no seu aparelho. Nunca os recebemos. Você pode apagá-los em Configurações → Apagar progresso ou excluindo o app."],
+ ["Publicidade (Google AdMob)","A versão gratuita mostra anúncios do Google AdMob. Para exibi-los, medi-los e evitar fraudes, o Google pode coletar: o identificador de publicidade do aparelho (no iPhone, só se você permitir o rastreamento), seu endereço IP e localização aproximada, informações sobre o aparelho e como você interage com os anúncios. No Espaço Econômico Europeu, no Reino Unido e na Suíça, o formulário de consentimento do Google pede sua escolha antes de mostrar anúncios personalizados; você pode mudá-la a qualquer momento em Configurações → Privacidade e anúncios. No iPhone, a Apple pergunta se o app pode rastrear você; se recusar, os anúncios não são personalizados. Mais informações: https://policies.google.com/technologies/partner-sites"],
+ ["Compras","A compra “Remover anúncios” é feita inteiramente pela App Store ou pelo Google Play. Nunca vemos seu nome nem seus dados de pagamento; o app só recebe a confirmação da compra."],
+ ["Notificações","O lembrete diário (opcional) é agendado no próprio celular. Nenhum servidor é usado e você pode desativá-lo em Configurações."],
+ ["Compartilhar","Ao tocar em “Compartilhar”, o menu do seu celular abre e você escolhe para onde enviar sua pontuação. Nada é compartilhado automaticamente."],
+ ["Crianças","O jogo é destinado ao público geral a partir de 13 anos. Não foi criado para menores de 13 anos e não coletamos dados deles intencionalmente."],
+ ["Seus direitos (LGPD/GDPR)","Como não guardamos dados pessoais seus, não há nada para acessar, corrigir ou apagar do nosso lado. Para dados coletados pelo Google para publicidade, veja a política do Google acima ou use Configurações → Privacidade e anúncios. Dúvidas: {email}."],
+ ["Mudanças","Se esta política mudar, a nova versão será publicada nesta página com uma nova data."]]},
+zh:{ back:"← 帮助", title:"隐私政策", updated:"最后更新：", s:[
+ ["简要说明","Higher or Lower 无需注册账号，我们（开发者）不会收集、存储或出售任何个人数据。你的分数和设置都保存在你的手机上。唯一会离开手机的数据，是 Google 用于展示广告的数据，以及你购买“去除广告”时由 Apple 或 Google 处理的数据。"],
+ ["我们是谁","Higher or Lower 由 DaoLune 制作，这是 Kevin Bosio 在法国创立的独立游戏工作室。联系方式：{email}"],
+ ["保存在手机上的数据","你的分数、统计、徽章、设置、你创建的类别以及每日挑战结果只保存在你的设备上，我们从不接收这些数据。你可以在“设置 → 重置进度”中清除，或直接删除应用。"],
+ ["广告（Google AdMob）","免费版会显示 Google AdMob 的广告。为了展示和衡量广告并防止欺诈，Google 可能会收集：设备的广告标识符（在 iPhone 上仅在你允许跟踪时）、IP 地址和大致位置、设备信息以及你与广告的互动情况。在欧洲经济区、英国和瑞士，Google 会先通过同意表单征求你的选择，再显示个性化广告；你可以随时在“设置 → 隐私与广告”中更改。在 iPhone 上，Apple 会询问是否允许应用跟踪你；如果拒绝，广告将不会个性化。更多信息：https://policies.google.com/technologies/partner-sites"],
+ ["购买","“去除广告”的购买完全由 App Store 或 Google Play 处理。我们看不到你的姓名或付款信息，应用只会收到购买成功的确认。"],
+ ["通知","可选的每日提醒直接在你的手机上设定，不经过任何服务器，你可以在设置中关闭。"],
+ ["分享","当你点击“分享”时，会打开手机自带的分享菜单，由你选择分享到哪里。不会自动分享任何内容。"],
+ ["儿童","本游戏面向13岁及以上的一般用户，并非为13岁以下儿童设计，我们也不会有意收集他们的数据。"],
+ ["你的权利","由于我们不持有你的任何个人数据，我们这边没有需要查阅、更正或删除的内容。关于 Google 为广告收集的数据，请参阅上方的 Google 政策或使用“设置 → 隐私与广告”。如有任何问题，请联系 {email}。"],
+ ["变更","如本政策有变更，新版本将发布在本页面并更新日期。"]]},
+ru:{ back:"← Поддержка", title:"Политика конфиденциальности", updated:"Последнее обновление:", s:[
+ ["Коротко","Для Higher or Lower не нужен аккаунт, и мы (разработчик) не собираем, не храним и не продаём персональные данные. Твои результаты и настройки остаются на телефоне. Телефон покидают только данные, которые Google использует для показа рекламы, и данные, которые обрабатывают Apple или Google при покупке «Убрать рекламу»."],
+ ["Кто мы","Higher or Lower создала DaoLune — независимая игровая студия Кевина Бозио из Франции. Контакт: {email}"],
+ ["Данные на твоём телефоне","Результаты, статистика, награды, настройки, созданные тобой категории и итоги заданий дня хранятся только на устройстве. Мы их никогда не получаем. Их можно стереть в разделе «Настройки → Сбросить прогресс» или удалив приложение."],
+ ["Реклама (Google AdMob)","В бесплатной версии показывается реклама Google AdMob. Чтобы показывать и измерять рекламу и бороться с мошенничеством, Google может собирать: рекламный идентификатор устройства (на iPhone — только если ты разрешишь отслеживание), IP-адрес и примерное местоположение, сведения об устройстве и о взаимодействии с рекламой. В Европейской экономической зоне, Великобритании и Швейцарии форма согласия Google спрашивает твой выбор до показа персонализированной рекламы; изменить его можно в любой момент в разделе «Настройки → Конфиденциальность и реклама». На iPhone Apple спрашивает, можно ли приложению отслеживать тебя; если отказаться, реклама не будет персонализированной. Подробнее: https://policies.google.com/technologies/partner-sites"],
+ ["Покупки","Покупку «Убрать рекламу» полностью обрабатывают App Store или Google Play. Мы не видим ни имени, ни платёжных данных; приложение получает только подтверждение покупки."],
+ ["Уведомления","Необязательное ежедневное напоминание настраивается прямо на телефоне. Сервер не используется, отключить напоминание можно в настройках."],
+ ["Поделиться","Когда ты нажимаешь «Поделиться», открывается меню телефона, и ты сам выбираешь, куда отправить результат. Ничего не отправляется автоматически."],
+ ["Дети","Игра рассчитана на широкую аудиторию от 13 лет. Она не предназначена для детей младше 13 лет, и мы сознательно не собираем их данные."],
+ ["Твои права","Поскольку мы не храним о тебе персональных данных, с нашей стороны нечего просматривать, исправлять или удалять. О данных, которые Google собирает для рекламы, читай в политике Google (ссылка выше) или используй «Настройки → Конфиденциальность и реклама». По любым вопросам: {email}."],
+ ["Изменения","Если политика изменится, новая версия будет опубликована на этой странице с новой датой."]]},
+th:{ back:"← ช่วยเหลือ", title:"นโยบายความเป็นส่วนตัว", updated:"อัปเดตล่าสุด:", s:[
+ ["สรุปสั้น ๆ","Higher or Lower ไม่ต้องสมัครบัญชี และเรา (ผู้พัฒนา) ไม่เก็บ ไม่บันทึก และไม่ขายข้อมูลส่วนบุคคลใด ๆ คะแนนและการตั้งค่าของคุณอยู่ในโทรศัพท์ของคุณเท่านั้น ข้อมูลที่ออกจากโทรศัพท์มีเพียงข้อมูลที่ Google ใช้เพื่อแสดงโฆษณา และข้อมูลที่ Apple หรือ Google ใช้เมื่อคุณซื้อ “ลบโฆษณา”"],
+ ["เราคือใคร","Higher or Lower สร้างโดย DaoLune สตูดิโอเกมอิสระของ Kevin Bosio ในประเทศฝรั่งเศส ติดต่อ: {email}"],
+ ["ข้อมูลที่เก็บในโทรศัพท์","คะแนน สถิติ เหรียญรางวัล การตั้งค่า หมวดที่คุณสร้าง และผลภารกิจประจำวัน ถูกบันทึกไว้ในเครื่องของคุณเท่านั้น เราไม่เคยได้รับข้อมูลเหล่านี้ คุณลบได้ที่ การตั้งค่า → รีเซ็ตความคืบหน้า หรือโดยการลบแอป"],
+ ["โฆษณา (Google AdMob)","เวอร์ชันฟรีแสดงโฆษณาจาก Google AdMob เพื่อแสดงและวัดผลโฆษณา รวมถึงป้องกันการฉ้อโกง Google อาจเก็บ: รหัสโฆษณาของอุปกรณ์ (บน iPhone เฉพาะเมื่อคุณอนุญาตการติดตาม) ที่อยู่ IP และตำแหน่งโดยประมาณ ข้อมูลอุปกรณ์ และการโต้ตอบกับโฆษณา ในเขตเศรษฐกิจยุโรป สหราชอาณาจักร และสวิตเซอร์แลนด์ แบบฟอร์มความยินยอมของ Google จะถามความต้องการของคุณก่อนแสดงโฆษณาที่ปรับให้เหมาะกับคุณ และคุณเปลี่ยนได้ทุกเมื่อที่ การตั้งค่า → ความเป็นส่วนตัวและโฆษณา บน iPhone Apple จะถามว่าอนุญาตให้แอปติดตามหรือไม่ หากปฏิเสธ โฆษณาจะไม่ถูกปรับตามตัวคุณ ข้อมูลเพิ่มเติม: https://policies.google.com/technologies/partner-sites"],
+ ["การซื้อ","การซื้อ “ลบโฆษณา” ดำเนินการทั้งหมดโดย App Store หรือ Google Play เราไม่เห็นชื่อหรือข้อมูลการชำระเงินของคุณ แอปได้รับเพียงการยืนยันว่าซื้อสำเร็จ"],
+ ["การแจ้งเตือน","การแจ้งเตือนรายวัน (ไม่บังคับ) ถูกตั้งไว้ในโทรศัพท์ของคุณเอง ไม่มีเซิร์ฟเวอร์เกี่ยวข้อง และปิดได้ในการตั้งค่า"],
+ ["การแชร์","เมื่อคุณแตะ “แชร์” เมนูแชร์ของโทรศัพท์จะเปิดขึ้น และคุณเลือกเองว่าจะส่งคะแนนไปที่ใด ไม่มีการแชร์อัตโนมัติ"],
+ ["เด็ก","เกมนี้เหมาะสำหรับผู้ใช้ทั่วไปอายุ 13 ปีขึ้นไป ไม่ได้ออกแบบมาสำหรับเด็กอายุต่ำกว่า 13 ปี และเราไม่ได้ตั้งใจเก็บข้อมูลของเด็ก"],
+ ["สิทธิของคุณ","เนื่องจากเราไม่ได้เก็บข้อมูลส่วนบุคคลของคุณ จึงไม่มีข้อมูลให้เข้าถึง แก้ไข หรือลบจากฝั่งเรา สำหรับข้อมูลที่ Google เก็บเพื่อโฆษณา โปรดดูนโยบายของ Google ด้านบน หรือใช้ การตั้งค่า → ความเป็นส่วนตัวและโฆษณา หากมีคำถาม ติดต่อ {email}"],
+ ["การเปลี่ยนแปลง","หากนโยบายนี้เปลี่ยนแปลง ฉบับใหม่จะเผยแพร่ในหน้านี้พร้อมวันที่ใหม่"]]},
+};
+renderPage(T, (t, L) => {
+  const link = s => s.replace(/https:\/\/\S+/g, u => '<a href="'+u+'">'+u+'</a>').replace(/\{email\}/g, '<a href="mailto:'+EMAIL+'">'+EMAIL+'</a>');
+  return '<h1>'+t.title+'</h1><p class="muted">'+t.updated+' '+DATE[L]+'</p>' + t.s.map(([h,p]) => '<h2>'+h+'</h2><p>'+link(p)+'</p>').join("");
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Higher or Lower – Support</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main>
+  <nav class="langs" id="langs"></nav>
+  <article id="doc"></article>
+  <p class="foot"><a href="privacy.html" id="back"></a></p>
+</main>
+<script src="config.js"></script>
+<script>
+// Support page of the game "Higher or Lower" (App Store "Support URL").
+const T = {
+en:{ back:"Privacy policy", title:"Help & support", intro:"Two things, one number. Is the other one higher or lower? Questions, a wrong fact or a bug? Write to us, we answer every message.", mail:"Email support", faq:[
+ ["I bought “Remove ads” but I still see ads","On the home screen, tap “Restore purchases” (under “Remove ads”). Use the same Apple ID or Google account you bought with."],
+ ["I changed phone. Can I get “Remove ads” back for free?","Yes. On the new phone, tap “Restore purchases” on the home screen."],
+ ["Where are my scores saved?","Only on your phone. There is no account, so scores do not move to a new phone."],
+ ["How do I change the language or units (km / miles)?","Menu → Settings → Language, and Settings → Units."],
+ ["How do I change my ad privacy choices?","Menu → Settings → Privacy & ads."],
+ ["I think an answer is wrong","Please tell us which question and your source. We check every report and fix it in the next update."],
+ ["How do I erase everything?","Menu → Settings → Reset progress (tap twice)."]]},
+fr:{ back:"Politique de confidentialité", title:"Aide et assistance", intro:"Deux choses, un nombre. L'autre est-il plus ou moins ? Une question, une erreur dans une réponse ou un bug ? Écris-nous, nous répondons à chaque message.", mail:"Écrire au support", faq:[
+ ["J'ai acheté « Supprimer les pubs » mais je vois encore des pubs","Sur l'écran d'accueil, appuie sur « Restaurer les achats » (sous « Supprimer les pubs »), avec le même identifiant Apple ou compte Google que pour l'achat."],
+ ["J'ai changé de téléphone. Je récupère « Supprimer les pubs » gratuitement ?","Oui. Sur le nouveau téléphone, appuie sur « Restaurer les achats » sur l'écran d'accueil."],
+ ["Où sont enregistrés mes scores ?","Uniquement sur ton téléphone. Il n'y a pas de compte, donc les scores ne passent pas sur un nouveau téléphone."],
+ ["Comment changer la langue ou les unités (km / miles) ?","Menu → Réglages → Langue, et Réglages → Unités."],
+ ["Comment modifier mes choix de confidentialité pour les pubs ?","Menu → Réglages → Confidentialité et pubs."],
+ ["Je pense qu'une réponse est fausse","Dis-nous quelle question et ta source. Nous vérifions chaque signalement et corrigeons dans la mise à jour suivante."],
+ ["Comment tout effacer ?","Menu → Réglages → Effacer la progression (appuie deux fois)."]]},
+es:{ back:"Política de privacidad", title:"Ayuda y soporte", intro:"Dos cosas, un número. ¿El otro es más o menos? ¿Una pregunta, un dato erróneo o un fallo? Escríbenos, respondemos a todos los mensajes.", mail:"Escribir a soporte", faq:[
+ ["Compré «Quitar anuncios» pero sigo viendo anuncios","En la pantalla de inicio, toca «Restaurar compras» (debajo de «Quitar anuncios»), con el mismo ID de Apple o cuenta de Google de la compra."],
+ ["Cambié de teléfono. ¿Recupero «Quitar anuncios» gratis?","Sí. En el teléfono nuevo, toca «Restaurar compras» en la pantalla de inicio."],
+ ["¿Dónde se guardan mis puntuaciones?","Solo en tu teléfono. No hay cuenta, así que no pasan a un teléfono nuevo."],
+ ["¿Cómo cambio el idioma o las unidades (km / millas)?","Menú → Ajustes → Idioma, y Ajustes → Unidades."],
+ ["¿Cómo cambio mis opciones de privacidad de anuncios?","Menú → Ajustes → Privacidad y anuncios."],
+ ["Creo que una respuesta está mal","Dinos qué pregunta y tu fuente. Revisamos cada aviso y lo corregimos en la siguiente actualización."],
+ ["¿Cómo lo borro todo?","Menú → Ajustes → Borrar progreso (toca dos veces)."]]},
+pt:{ back:"Política de privacidade", title:"Ajuda e suporte", intro:"Duas coisas, um número. O outro é maior ou menor? Dúvida, um dado errado ou um bug? Escreva para nós, respondemos todas as mensagens.", mail:"Falar com o suporte", faq:[
+ ["Comprei “Remover anúncios” mas ainda vejo anúncios","Na tela inicial, toque em “Restaurar compras” (abaixo de “Remover anúncios”), com o mesmo ID Apple ou conta Google da compra."],
+ ["Troquei de celular. Recupero “Remover anúncios” de graça?","Sim. No celular novo, toque em “Restaurar compras” na tela inicial."],
+ ["Onde ficam salvas minhas pontuações?","Só no seu celular. Não existe conta, então elas não passam para um celular novo."],
+ ["Como mudo o idioma ou as unidades (km / milhas)?","Menu → Configurações → Idioma, e Configurações → Unidades."],
+ ["Como mudo minhas escolhas de privacidade de anúncios?","Menu → Configurações → Privacidade e anúncios."],
+ ["Acho que uma resposta está errada","Diga qual pergunta e sua fonte. Verificamos cada aviso e corrigimos na próxima atualização."],
+ ["Como apago tudo?","Menu → Configurações → Apagar progresso (toque duas vezes)."]]},
+zh:{ back:"隐私政策", title:"帮助与支持", intro:"两样东西，一个数字。另一个更高还是更低？有问题、发现答案有误或遇到 bug？请给我们写信，每条消息我们都会回复。", mail:"联系支持", faq:[
+ ["我购买了“去除广告”，但仍然看到广告","在主界面点击“恢复购买”（位于“去除广告”下方），并使用购买时的 Apple ID 或 Google 账号。"],
+ ["我换了手机，可以免费恢复“去除广告”吗？","可以。在新手机的主界面点击“恢复购买”。"],
+ ["我的分数保存在哪里？","只保存在你的手机上。没有账号，所以分数不会转移到新手机。"],
+ ["如何更改语言或单位（公里 / 英里）？","菜单 → 设置 → 语言，以及 设置 → 单位。"],
+ ["如何更改广告隐私选项？","菜单 → 设置 → 隐私与广告。"],
+ ["我觉得某个答案是错的","请告诉我们是哪道题以及你的来源。我们会核实每一条反馈，并在下次更新中修正。"],
+ ["如何清除所有数据？","菜单 → 设置 → 重置进度（点两次）。"]]},
+ru:{ back:"Политика конфиденциальности", title:"Помощь и поддержка", intro:"Две вещи, одно число. У другой больше или меньше? Вопрос, ошибка в ответе или баг? Напиши нам — мы отвечаем на каждое сообщение.", mail:"Написать в поддержку", faq:[
+ ["Я купил(а) «Убрать рекламу», но реклама осталась","На главном экране нажми «Восстановить покупки» (под «Убрать рекламу»), используя тот же Apple ID или аккаунт Google, что и при покупке."],
+ ["Я сменил(а) телефон. Можно бесплатно вернуть «Убрать рекламу»?","Да. На новом телефоне нажми «Восстановить покупки» на главном экране."],
+ ["Где хранятся мои результаты?","Только на телефоне. Аккаунта нет, поэтому результаты не переносятся на новый телефон."],
+ ["Как сменить язык или единицы (км / мили)?","Меню → Настройки → Язык, и Настройки → Единицы."],
+ ["Как изменить настройки конфиденциальности рекламы?","Меню → Настройки → Конфиденциальность и реклама."],
+ ["Кажется, ответ неверный","Напиши, какой вопрос и твой источник. Мы проверяем каждое сообщение и исправляем в следующем обновлении."],
+ ["Как всё стереть?","Меню → Настройки → Сбросить прогресс (нажми дважды)."]]},
+th:{ back:"นโยบายความเป็นส่วนตัว", title:"ช่วยเหลือและติดต่อ", intro:"ของสองอย่าง ตัวเลขหนึ่งตัว อีกอย่างมากกว่าหรือน้อยกว่า? มีคำถาม เจอคำตอบผิด หรือพบปัญหา? เขียนถึงเราได้เลย เราตอบทุกข้อความ", mail:"อีเมลถึงฝ่ายช่วยเหลือ", faq:[
+ ["ซื้อ “ลบโฆษณา” แล้วแต่ยังเห็นโฆษณา","ที่หน้าแรก แตะ “กู้คืนการซื้อ” (ใต้ “ลบโฆษณา”) โดยใช้ Apple ID หรือบัญชี Google เดียวกับที่ใช้ซื้อ"],
+ ["เปลี่ยนโทรศัพท์ใหม่ ได้ “ลบโฆษณา” คืนฟรีไหม?","ได้ ในโทรศัพท์เครื่องใหม่ แตะ “กู้คืนการซื้อ” ที่หน้าแรก"],
+ ["คะแนนของฉันเก็บไว้ที่ไหน?","เก็บในโทรศัพท์ของคุณเท่านั้น ไม่มีบัญชี คะแนนจึงไม่ย้ายไปเครื่องใหม่"],
+ ["เปลี่ยนภาษาหรือหน่วย (กม. / ไมล์) อย่างไร?","เมนู → การตั้งค่า → ภาษา และ การตั้งค่า → หน่วย"],
+ ["เปลี่ยนตัวเลือกความเป็นส่วนตัวของโฆษณาอย่างไร?","เมนู → การตั้งค่า → ความเป็นส่วนตัวและโฆษณา"],
+ ["คิดว่ามีคำตอบผิด","บอกเราว่าเป็นคำถามข้อไหนและแหล่งข้อมูลของคุณ เราตรวจสอบทุกการแจ้งและแก้ไขในอัปเดตถัดไป"],
+ ["ลบข้อมูลทั้งหมดอย่างไร?","เมนู → การตั้งค่า → รีเซ็ตความคืบหน้า (แตะสองครั้ง)"]]},
+};
+renderPage(T, (t) => '<h1>Higher <span>or</span> Lower</h1><p class="muted">'+t.title+' · DaoLune</p><p>'+t.intro+'</p><p><a class="btn" href="mailto:'+EMAIL+'?subject=Higher%20or%20Lower">✉️ '+t.mail+'</a></p>'
+  + t.faq.map(([q,a]) => '<div class="card"><b>'+q+'</b><p style="margin:6px 0 0">'+a+'</p></div>').join(""));
+</script>
+</body>
+</html>
