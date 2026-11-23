@@ -1,0 +1,15 @@
+:root{color-scheme:dark}
+body{margin:0;background:radial-gradient(120% 60% at 50% 0%,#3a2a1e,#17120e 70%) fixed;color:#fffaf0;
+  font:16px/1.6 system-ui,-apple-system,"Segoe UI","PingFang SC","Noto Sans SC","Thonburi","Noto Sans Thai",sans-serif}
+main{max-width:720px;margin:0 auto;padding:28px 20px 60px}
+h1{font-size:30px;line-height:1.2;margin:18px 0 4px}
+h1 span{color:#ffd97a}
+h2{font-size:19px;margin:28px 0 6px;color:#ffd97a}
+p,li{color:rgba(255,248,235,.88)}
+a{color:#ffd97a}
+.muted{color:rgba(255,248,235,.6);font-size:14px;margin-top:0}
+.langs{font-size:14px;color:rgba(255,248,235,.6)}
+.langs b{color:#fffaf0}
+.card{background:#231b15;border-radius:20px;padding:18px 20px;margin:16px 0;box-shadow:0 4px 0 rgba(0,0,0,.3)}
+.btn{display:inline-block;background:#fff6e6;color:#2b1d12;font-weight:800;text-decoration:none;padding:12px 20px;border-radius:16px;box-shadow:0 4px 0 rgba(0,0,0,.3)}
+.foot{margin-top:40px;font-size:14px}

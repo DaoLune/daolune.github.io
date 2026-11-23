@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Who Said It? – Support</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main>
+  <nav class="langs" id="langs"></nav>
+  <article id="doc"></article>
+  <p class="foot"><a href="privacy.html" id="back"></a> · <a href="../">DaoLune</a></p>
+</main>
+<script>
+// Support page of the game "Who Said It?" (App Store "Support URL"). Labels match the game's own buttons.
+const EMAIL = "hello.daolune@gmail.com";
+const LANGS = [["en","English"],["fr","Français"],["de","Deutsch"],["es","Español"],["pt","Português"],["zh","繁體中文"],["ja","日本語"],["ru","Русский"],["th","ไทย"]];
+const T = {
+en:{ back:"Privacy policy", title:"Help & support", intro:"A famous line, four names: who really said it? Questions, a quote you think is wrong, or a bug? Write to us, we answer every message.", mail:"Email support", faq:[
+ ["I bought “Remove ads” but I still see ads","On the home screen, tap “Restore purchase” (under “Remove ads”). Use the same Apple ID or Google account you bought with."],
+ ["I changed phone. Can I get “Remove ads” back for free?","Yes. On the new phone, tap “Restore purchase” on the home screen."],
+ ["Where are my scores and my Library saved?","Only on your phone. There is no account, so they do not move to a new phone."],
+ ["How do I change the language?","Home screen → Settings → Language."],
+ ["How do I turn the daily reminder on or off?","Home screen → Settings → Daily reminder. You can also block notifications in your phone's settings."],
+ ["How do I change my ad privacy choices?","In Europe and the UK: Home screen → Settings → Privacy & ads. On iPhone you can also go to the phone's Settings → Privacy & Security → Tracking."],
+ ["When does the Daily Quote change?","Every day at midnight UTC, for everyone at the same time (1:00 in France in winter)."],
+ ["I think a quote is wrong or wrongly credited","Every quote in the game has a checked source, shown under the answer. If you still think one is wrong, tell us which quote and your source. We check every report and fix it in the next update."],
+ ["How do I erase everything?","Home screen → Settings → Reset progress (tap twice)."]]},
+fr:{ back:"Politique de confidentialité", title:"Aide et assistance", intro:"Une citation célèbre, quatre noms : qui l'a vraiment dite ? Une question, une citation qui te semble fausse ou un bug ? Écris-nous, nous répondons à chaque message.", mail:"Écrire au support", faq:[
+ ["J'ai acheté « Supprimer les pubs » mais je vois encore des pubs","Sur l'écran d'accueil, appuie sur « Restaurer l'achat » (sous « Supprimer les pubs »), avec le même identifiant Apple ou compte Google que pour l'achat."],
+ ["J'ai changé de téléphone. Je récupère « Supprimer les pubs » gratuitement ?","Oui. Sur le nouveau téléphone, appuie sur « Restaurer l'achat » sur l'écran d'accueil."],
+ ["Où sont enregistrés mes scores et ma Collection ?","Uniquement sur ton téléphone. Il n'y a pas de compte, donc ils ne passent pas sur un nouveau téléphone."],
+ ["Comment changer la langue ?","Écran d'accueil → Réglages → Langue."],
+ ["Comment activer ou couper le rappel quotidien ?","Écran d'accueil → Réglages → Rappel quotidien. Tu peux aussi bloquer les notifications dans les réglages du téléphone."],
+ ["Comment modifier mes choix de confidentialité pour les pubs ?","En Europe et au Royaume-Uni : écran d'accueil → Réglages → Confidentialité et pubs. Sur iPhone, tu peux aussi aller dans Réglages du téléphone → Confidentialité et sécurité → Suivi."],
+ ["Quand change la Citation du jour ?","Chaque jour à minuit UTC, en même temps pour tout le monde (1 h du matin en France l'hiver)."],
+ ["Je pense qu'une citation est fausse ou mal attribuée","Chaque citation du jeu a une source vérifiée, affichée sous la réponse. Si tu penses quand même qu'il y a une erreur, dis-nous quelle citation et ta source. Nous vérifions chaque signalement et corrigeons dans la mise à jour suivante."],
+ ["Comment tout effacer ?","Écran d'accueil → Réglages → Effacer la progression (appuie deux fois)."]]},
+de:{ back:"Datenschutzerklärung", title:"Hilfe & Support", intro:"Ein berühmtes Zitat, vier Namen: Wer hat es wirklich gesagt? Fragen, ein Zitat, das du für falsch hältst, oder ein Fehler? Schreib uns, wir beantworten jede Nachricht.", mail:"Support kontaktieren", faq:[
+ ["Ich habe „Werbung entfernen“ gekauft, sehe aber noch Werbung","Tippe auf dem Startbildschirm auf „Kauf wiederherstellen“ (unter „Werbung entfernen“). Nutze dieselbe Apple-ID bzw. dasselbe Google-Konto wie beim Kauf."],
+ ["Ich habe ein neues Handy. Bekomme ich „Werbung entfernen“ kostenlos zurück?","Ja. Tippe auf dem neuen Handy auf dem Startbildschirm auf „Kauf wiederherstellen“."],
+ ["Wo werden meine Punkte und meine Sammlung gespeichert?","Nur auf deinem Handy. Es gibt kein Konto, daher werden sie nicht auf ein neues Handy übertragen."],
+ ["Wie ändere ich die Sprache?","Startbildschirm → Einstellungen → Sprache."],
+ ["Wie schalte ich die tägliche Erinnerung ein oder aus?","Startbildschirm → Einstellungen → Tägliche Erinnerung. Du kannst Mitteilungen auch in den Handy-Einstellungen blockieren."],
+ ["Wie ändere ich meine Datenschutz-Einstellungen für Werbung?","In Europa und Großbritannien: Startbildschirm → Einstellungen → Datenschutz & Werbung. Auf dem iPhone auch unter Einstellungen → Datenschutz & Sicherheit → Tracking."],
+ ["Wann wechselt das Zitat des Tages?","Jeden Tag um Mitternacht UTC, für alle gleichzeitig (1 Uhr in Deutschland im Winter)."],
+ ["Ich glaube, ein Zitat ist falsch oder falsch zugeordnet","Jedes Zitat im Spiel hat eine geprüfte Quelle, die unter der Antwort steht. Wenn du trotzdem einen Fehler vermutest, nenne uns das Zitat und deine Quelle. Wir prüfen jede Meldung und korrigieren sie im nächsten Update."],
+ ["Wie lösche ich alles?","Startbildschirm → Einstellungen → Fortschritt zurücksetzen (zweimal tippen)."]]},
+es:{ back:"Política de privacidad", title:"Ayuda y soporte", intro:"Una frase célebre, cuatro nombres: ¿quién la dijo de verdad? ¿Una pregunta, una cita que crees que está mal o un fallo? Escríbenos, respondemos a todos los mensajes.", mail:"Escribir a soporte", faq:[
+ ["Compré «Quitar anuncios» pero sigo viendo anuncios","En la pantalla de inicio, toca «Restaurar compra» (debajo de «Quitar anuncios»), con el mismo ID de Apple o cuenta de Google de la compra."],
+ ["Cambié de teléfono. ¿Recupero «Quitar anuncios» gratis?","Sí. En el teléfono nuevo, toca «Restaurar compra» en la pantalla de inicio."],
+ ["¿Dónde se guardan mis puntuaciones y mi Colección?","Solo en tu teléfono. No hay cuenta, así que no pasan a un teléfono nuevo."],
+ ["¿Cómo cambio el idioma?","Pantalla de inicio → Ajustes → Idioma."],
+ ["¿Cómo activo o desactivo el recordatorio diario?","Pantalla de inicio → Ajustes → Recordatorio diario. También puedes bloquear las notificaciones en los ajustes del teléfono."],
+ ["¿Cómo cambio mis opciones de privacidad de anuncios?","En Europa y Reino Unido: pantalla de inicio → Ajustes → Privacidad y anuncios. En iPhone también en Ajustes del teléfono → Privacidad y seguridad → Rastreo."],
+ ["¿Cuándo cambia la Cita del día?","Cada día a medianoche UTC, a la misma hora para todos (la 1:00 en España en invierno)."],
+ ["Creo que una cita está mal o mal atribuida","Cada cita del juego tiene una fuente verificada, que aparece bajo la respuesta. Si aun así crees que hay un error, dinos qué cita y tu fuente. Revisamos cada aviso y lo corregimos en la siguiente actualización."],
+ ["¿Cómo lo borro todo?","Pantalla de inicio → Ajustes → Borrar progreso (toca dos veces)."]]},
+pt:{ back:"Política de privacidade", title:"Ajuda e suporte", intro:"Uma frase famosa, quatro nomes: quem disse de verdade? Dúvida, uma citação que parece errada ou um bug? Escreva para nós, respondemos todas as mensagens.", mail:"Falar com o suporte", faq:[
+ ["Comprei “Remover anúncios” mas ainda vejo anúncios","Na tela inicial, toque em “Restaurar compra” (abaixo de “Remover anúncios”), com o mesmo ID Apple ou conta Google da compra."],
+ ["Troquei de celular. Recupero “Remover anúncios” de graça?","Sim. No celular novo, toque em “Restaurar compra” na tela inicial."],
+ ["Onde ficam salvas minhas pontuações e minha Coleção?","Só no seu celular. Não existe conta, então elas não passam para um celular novo."],
+ ["Como mudo o idioma?","Tela inicial → Definições → Idioma."],
+ ["Como ligo ou desligo o lembrete diário?","Tela inicial → Definições → Lembrete diário. Você também pode bloquear as notificações nos ajustes do celular."],
+ ["Como mudo minhas escolhas de privacidade de anúncios?","Na Europa e no Reino Unido: tela inicial → Definições → Privacidade e anúncios. No iPhone, também em Ajustes → Privacidade e Segurança → Rastreamento."],
+ ["Quando a Citação do dia muda?","Todo dia à meia-noite UTC, ao mesmo tempo para todos (21h no horário de Brasília)."],
+ ["Acho que uma citação está errada ou atribuída à pessoa errada","Cada citação do jogo tem uma fonte verificada, mostrada abaixo da resposta. Se mesmo assim achar que há um erro, diga qual citação e sua fonte. Verificamos cada aviso e corrigimos na próxima atualização."],
+ ["Como apago tudo?","Tela inicial → Definições → Apagar progresso (toque duas vezes)."]]},
+zh:{ back:"隱私政策", title:"說明與支援", intro:"一句名言，四個名字：到底是誰說的？有問題、覺得某句名言有誤，或遇到錯誤？請寫信給我們，每封訊息我們都會回覆。", mail:"聯絡支援", faq:[
+ ["我買了「去除廣告」，但還是看到廣告","在主畫面點「恢復購買」（在「去除廣告」下方），並使用購買時的 Apple ID 或 Google 帳號。"],
+ ["我換了手機，可以免費取回「去除廣告」嗎？","可以。在新手機的主畫面點「恢復購買」。"],
+ ["我的分數和收藏存在哪裡？","只存在你的手機裡。沒有帳號，所以不會轉移到新手機。"],
+ ["如何更改語言？","主畫面 → 設定 → 語言。"],
+ ["如何開啟或關閉每日提醒？","主畫面 → 設定 → 每日提醒。你也可以在手機設定中封鎖通知。"],
+ ["如何更改廣告隱私選項？","在歐洲和英國：主畫面 → 設定 → 隱私與廣告。iPhone 也可以到手機的 設定 → 隱私權與安全性 → 追蹤。"],
+ ["「每日名言」什麼時候更新？","每天 UTC 午夜，所有人同時更新（台灣時間早上 8 點）。"],
+ ["我覺得某句名言有誤或作者標錯了","遊戲中每句名言都有經過查證的出處，顯示在答案下方。如果你仍然覺得有錯，請告訴我們是哪一句以及你的資料來源。我們會核實每一則回報，並在下次更新中修正。"],
+ ["如何清除所有資料？","主畫面 → 設定 → 重置進度（點兩次）。"]]},
+ja:{ back:"プライバシーポリシー", title:"ヘルプとサポート", intro:"有名な言葉と4つの名前。本当に言ったのは誰？ ご質問、間違っていると思う名言、不具合などがあればご連絡ください。すべてのメッセージにお返事します。", mail:"サポートにメール", faq:[
+ ["「広告を削除」を購入したのに広告が出ます","ホーム画面で「購入を復元」（「広告を削除」の下）をタップしてください。購入時と同じ Apple ID または Google アカウントを使ってください。"],
+ ["機種変更しました。「広告を削除」は無料で戻せますか？","はい。新しい端末のホーム画面で「購入を復元」をタップしてください。"],
+ ["スコアやコレクションはどこに保存されますか？","お使いの端末の中だけです。アカウントがないため、新しい端末には引き継がれません。"],
+ ["言語を変えるには？","ホーム画面 → 設定 → 言語。"],
+ ["毎日のお知らせをオン・オフするには？","ホーム画面 → 設定 → 毎日のお知らせ。端末の設定で通知をオフにすることもできます。"],
+ ["広告のプライバシー設定を変えるには？","ヨーロッパとイギリスでは：ホーム画面 → 設定 → プライバシーと広告。iPhone では端末の 設定 → プライバシーとセキュリティ → トラッキング からも変更できます。"],
+ ["「今日の名言」はいつ変わりますか？","毎日 UTC の午前0時に、全員同時に変わります（日本時間の午前9時）。"],
+ ["名言が間違っている、または別の人の言葉だと思います","ゲーム内のすべての名言には確認済みの出典があり、答えの下に表示されます。それでも間違いだと思う場合は、どの名言かと根拠となる出典をお知らせください。すべて確認し、次のアップデートで修正します。"],
+ ["すべて消去するには？","ホーム画面 → 設定 → 記録をリセット（2回タップ）。"]]},
+ru:{ back:"Политика конфиденциальности", title:"Помощь и поддержка", intro:"Известная фраза и четыре имени: кто сказал её на самом деле? Вопрос, цитата, которая кажется неверной, или ошибка? Напиши нам — мы отвечаем на каждое сообщение.", mail:"Написать в поддержку", faq:[
+ ["Я купил(а) «Убрать рекламу», но реклама осталась","На главном экране нажми «Восстановить покупку» (под «Убрать рекламу»), используя тот же Apple ID или аккаунт Google, что и при покупке."],
+ ["Я сменил(а) телефон. Можно бесплатно вернуть «Убрать рекламу»?","Да. На новом телефоне нажми «Восстановить покупку» на главном экране."],
+ ["Где хранятся мои результаты и Коллекция?","Только на телефоне. Аккаунта нет, поэтому они не переносятся на новый телефон."],
+ ["Как сменить язык?","Главный экран → Настройки → Язык."],
+ ["Как включить или выключить ежедневное напоминание?","Главный экран → Настройки → Ежедневное напоминание. Также можно отключить уведомления в настройках телефона."],
+ ["Как изменить настройки конфиденциальности рекламы?","В Европе и Великобритании: главный экран → Настройки → Конфиденциальность и реклама. На iPhone также: Настройки телефона → Конфиденциальность и безопасность → Отслеживание."],
+ ["Когда меняется цитата дня?","Каждый день в полночь по UTC, для всех одновременно (в 3:00 по Москве)."],
+ ["Мне кажется, цитата неверная или приписана не тому человеку","У каждой цитаты в игре есть проверенный источник — он показан под ответом. Если всё же видишь ошибку, напиши, какая цитата и какой у тебя источник. Мы проверяем каждое сообщение и исправляем в следующем обновлении."],
+ ["Как всё стереть?","Главный экран → Настройки → Сбросить прогресс (нажми дважды)."]]},
+th:{ back:"นโยบายความเป็นส่วนตัว", title:"ช่วยเหลือและติดต่อ", intro:"คำคมดัง ชื่อสี่ชื่อ ใครพูดจริง ๆ? มีคำถาม เจอคำคมที่คิดว่าผิด หรือพบปัญหา? เขียนถึงเราได้เลย เราตอบทุกข้อความ", mail:"อีเมลถึงฝ่ายช่วยเหลือ", faq:[
+ ["ซื้อ “ลบโฆษณา” แล้วแต่ยังเห็นโฆษณา","ที่หน้าแรก แตะ “กู้คืนการซื้อ” (ใต้ “ลบโฆษณา”) โดยใช้ Apple ID หรือบัญชี Google เดียวกับที่ใช้ซื้อ"],
+ ["เปลี่ยนโทรศัพท์ใหม่ ได้ “ลบโฆษณา” คืนฟรีไหม?","ได้ ในโทรศัพท์เครื่องใหม่ แตะ “กู้คืนการซื้อ” ที่หน้าแรก"],
+ ["คะแนนและคอลเลกชันของฉันเก็บไว้ที่ไหน?","เก็บในโทรศัพท์ของคุณเท่านั้น ไม่มีบัญชี จึงไม่ย้ายไปเครื่องใหม่"],
+ ["เปลี่ยนภาษาอย่างไร?","หน้าแรก → การตั้งค่า → ภาษา"],
+ ["เปิดหรือปิดการแจ้งเตือนรายวันอย่างไร?","หน้าแรก → การตั้งค่า → แจ้งเตือนรายวัน หรือปิดการแจ้งเตือนในการตั้งค่าของโทรศัพท์ก็ได้"],
+ ["เปลี่ยนตัวเลือกความเป็นส่วนตัวของโฆษณาอย่างไร?","ในยุโรปและสหราชอาณาจักร: หน้าแรก → การตั้งค่า → ความเป็นส่วนตัวและโฆษณา บน iPhone ไปที่ การตั้งค่า → ความเป็นส่วนตัวและความปลอดภัย → การติดตาม ได้ด้วย"],
+ ["คำคมประจำวันเปลี่ยนเมื่อไร?","ทุกวันเวลาเที่ยงคืน UTC พร้อมกันทุกคน (7 โมงเช้าเวลาประเทศไทย)"],
+ ["คิดว่าคำคมผิดหรือใส่ชื่อคนพูดผิด","ทุกคำคมในเกมมีแหล่งที่มาที่ตรวจสอบแล้ว แสดงอยู่ใต้คำตอบ ถ้ายังคิดว่าผิด บอกเราว่าเป็นคำคมไหนและแหล่งข้อมูลของคุณ เราตรวจสอบทุกการแจ้งและแก้ไขในอัปเดตถัดไป"],
+ ["ลบข้อมูลทั้งหมดอย่างไร?","หน้าแรก → การตั้งค่า → ล้างความคืบหน้า (แตะสองครั้ง)"]]},
+};
+const want = new URLSearchParams(location.search).get("lang") || (navigator.language || "en").slice(0,2).toLowerCase();
+const L = T[want] ? want : "en", t = T[L];
+document.documentElement.lang = L;
+document.getElementById("langs").innerHTML = LANGS.map(([c,n]) => c===L ? "<b>"+n+"</b>" : '<a href="?lang='+c+'">'+n+"</a>").join(" · ");
+document.getElementById("doc").innerHTML = '<h1>Who Said <span>It?</span></h1><p class="muted">'+t.title+' · DaoLune</p><p>'+t.intro+'</p><p><a class="btn" href="mailto:'+EMAIL+'?subject=Who%20Said%20It%3F">✉️ '+t.mail+'</a></p>'
+  + t.faq.map(([q,a]) => '<div class="card"><b>'+q+'</b><p style="margin:6px 0 0">'+a+'</p></div>').join("");
+document.getElementById("back").textContent = t.back;
+document.title = "Who Said It? – " + t.title;
+</script>
+</body>
+</html>
